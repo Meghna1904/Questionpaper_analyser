@@ -7,9 +7,17 @@ GET  /api/status   — health check
 
 import os
 import json
+import os
+import re
 import tempfile
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
+
+try:
+    from xhtml2pdf import pisa
+    HAS_PDF = True
+except ImportError:
+    HAS_PDF = False
 
 from parser import parse_multiple_pdfs
 from syllabus_parser import parse_syllabus, get_all_topics_flat, DEFAULT_SYLLABUS
@@ -107,7 +115,7 @@ def analyse():
     enriched = score_questions_against_syllabus(all_questions, syllabus_flat)
 
     # ── 7. Frequency analysis ────────────────────────────────────────────
-    freq_map = compute_topic_frequency(enriched)
+    freq_map = compute_topic_frequency(enriched, syllabus_flat)
     ranked_all = get_ranked_topics(freq_map)
 
     ranked_by_module = {}
@@ -118,12 +126,55 @@ def analyse():
     predictions = compute_prediction_scores(enriched, paper_dates=sorted(paper_names))
     predictions_by_module = get_top_predictions_by_module(predictions, top_n=5)
 
-    # ── 9. Group questions by module ─────────────────────────────────────
-    questions_by_module = {i: [] for i in range(1, 6)}
+    # ── 9. Group questions by module (Structured Exam Format) ────────────
+    module_structure = {str(i): {"partA": [], "partB": []} for i in range(1, 6)}
+    part_b_map = {}
+
     for q in enriched:
         mod = q.get("primary_module", 0)
-        if 1 <= mod <= 5:
-            questions_by_module[mod].append(q)
+        if not (1 <= mod <= 5):
+            continue
+            
+        if q.get("part") == "A":
+            module_structure[str(mod)]["partA"].append({
+                "number": q["q_num"],
+                "text": q["text"],
+                "topics": q.get("topics", []),
+                "is_uncertain": q.get("is_uncertain", False),
+                "source": q.get("source", "")
+            })
+        else: # Part B
+            key = (mod, q.get("source", ""), q["q_num"], q.get("is_or_variant", False))
+            if key not in part_b_map:
+                part_b_map[key] = {
+                    "number": q["q_num"],
+                    "marks": 14,  # KTU essay mark weight
+                    "is_or_variant": q.get("is_or_variant", False),
+                    "source": q.get("source", ""),
+                    "subQuestions": [],
+                    "topics": [] 
+                }
+            
+            part_b_map[key]["subQuestions"].append({
+                "marker": q.get("sub", ""),
+                "text": q["text"],
+                "topics": q.get("topics", []),
+                "is_uncertain": q.get("is_uncertain", False)
+            })
+            for t in q.get("topics", []):
+                # Only add topic to parent level if not already present to avoid dupes
+                if not any(existing_t["name"] == t["name"] for existing_t in part_b_map[key]["topics"]):
+                    part_b_map[key]["topics"].append(t)
+                    
+    # Transfer mapped part B objects into the final lists
+    for key, main_q in part_b_map.items():
+        mod_str = str(key[0])
+        module_structure[mod_str]["partB"].append(main_q)
+
+    # Sort part A and part B questions by their number before returning
+    for mod in module_structure.values():
+        mod["partA"].sort(key=lambda x: x["number"])
+        mod["partB"].sort(key=lambda x: (x["number"], x["is_or_variant"]))
 
     # ── 10. Build response ───────────────────────────────────────────────
     response = {
@@ -136,15 +187,12 @@ def analyse():
             }
             for mod, data in syllabus.items()
         },
-        "ranked_topics_overall": ranked_all[:30],
+        "ranked_topics_overall": ranked_all,
         "ranked_topics_by_module": {
             str(mod): ranked_by_module[mod]
             for mod in range(1, 6)
         },
-        "questions_by_module": {
-            str(mod): questions_by_module[mod]
-            for mod in range(1, 6)
-        },
+        "module_structure": module_structure,
         "predictions_by_module": {
             str(mod): preds
             for mod, preds in predictions_by_module.items()
@@ -165,6 +213,33 @@ def analyse():
     return jsonify(response)
 
 
-if __name__ == "__main__":
-    print("QP Analyser API starting on http://localhost:5000")
-    app.run(debug=True, port=5000)
+@app.route('/api/export-pdf', methods=['POST'])
+def export_pdf():
+    if not HAS_PDF:
+        return jsonify({"error": "xhtml2pdf not installed on server"}), 500
+        
+    try:
+        data = request.json
+        # Render the HTML from the jinja template
+        html_string = render_template('report.html', data=data)
+        
+        # Temp file for the generated PDF
+        pdf_path = os.path.join(tempfile.gettempdir(), "QP_Analysis_Report.pdf")
+        
+        with open(pdf_path, "w+b") as result_file:
+            pisa_status = pisa.CreatePDF(html_string, dest=result_file)
+            
+        if pisa_status.err:
+            return jsonify({"error": "PDF compilation failed details unknown"}), 500
+            
+        return send_file(pdf_path, as_attachment=True, download_name="QP_Analysis_Report.pdf", mimetype='application/pdf')
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == '__main__':
+    # Ensure uploads dir exists
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
+
+    app.run(host='0.0.0.0', port=5000, debug=True)

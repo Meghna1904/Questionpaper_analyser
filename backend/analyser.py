@@ -190,6 +190,7 @@ def score_questions_against_syllabus(
 
 def compute_topic_frequency(
     all_enriched_questions: list[dict],
+    syllabus_flat: list[dict] = None
 ) -> dict:
     """
     Aggregate topic frequency across all questions from all papers.
@@ -206,6 +207,15 @@ def compute_topic_frequency(
         "module_title": "",
         "questions": [],
     })
+
+    if syllabus_flat:
+        for st in syllabus_flat:
+            key = st["topic"]
+            freq[key]["module"] = st["module"]
+            freq[key]["module_title"] = st.get("module_title", "")
+            freq[key]["count"] = 0.0
+            freq[key]["raw_count"] = 0
+            freq[key]["questions"] = []
 
     for q in all_enriched_questions:
         for t in q.get("topics", []):

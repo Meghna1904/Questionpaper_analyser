@@ -159,15 +159,16 @@ export default function ResultsPage({ results, onReset }) {
           </div>
 
           {/* Question list */}
-          <div className="panel">
+          <div className="panel" style={{ flex: 1 }}>
             <div className="panel-header">
-              <div className="panel-title">📋 Questions — {moduleTitle}</div>
-              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                {questions.length} items
-              </span>
+              <div className="panel-title">📋 Exam Breakdown — {moduleTitle}</div>
             </div>
             <div className="panel-body">
-              <QuestionList questions={questions} />
+              <QuestionList 
+                questions={questions} 
+                moduleStructure={isAll ? results.module_structure : { [modNum]: results.module_structure[String(modNum)] || {partA: [], partB: []} }}
+                rankedTopics={rankedTopics}
+              />
             </div>
           </div>
         </div>

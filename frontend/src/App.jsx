@@ -42,6 +42,7 @@ function App() {
   // ── Analyse ────────────────────────────────────────────────────────────
   const handleAnalyse = async () => {
     if (!files.length) { setError('Please upload at least one PDF.'); return }
+    if (!syllabusText.trim()) { setError('Please provide the syllabus text to match topics against.'); return }
 
     setLoading(true)
     setLoadStep(0)
@@ -77,10 +78,30 @@ function App() {
     }
   }
 
-  const handleExportPDF = () => {
-    // Relying on native window.print() allows the user to 'Save as PDF' 
-    // with actual selectable text rather than an image canvas screenshot.
-    window.print()
+  const handleExportPDF = async () => {
+    try {
+      const response = await fetch(`${API_BASE}/export-pdf`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(results)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to generate PDF on server');
+      }
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "QP_Analysis_Report.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch(err) {
+      setError(err.message || "PDF Export failed");
+    }
   }
 
   const handleReset = () => {
@@ -185,7 +206,7 @@ function App() {
 
           {/* Syllabus Card */}
           <div className="syllabus-card">
-            <h3>📚 Syllabus <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional — uses built-in CST446 if left blank)</span></h3>
+            <h3>📚 Syllabus</h3>
 
             <textarea
               className="syllabus-textarea"
@@ -194,9 +215,6 @@ function App() {
               onChange={e => setSyllabusText(e.target.value)}
               rows={6}
             />
-            <div className="syllabus-placeholder">
-              💡 Leave blank to use built-in CST446 Data Compression syllabus
-            </div>
           </div>
 
           {/* Analyse button */}
