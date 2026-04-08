@@ -1,0 +1,204 @@
+FILE: 2023 June CST446-A.pdf
+PAGES: 3, TOTAL CHARS (no whitespace): 3156, AVG/PAGE: 1052
+IS_DIGITAL: True
+
+=== PAGE 1 ===
+0400CST446052302 
+ 
+Page 1of 3 
+ 
+ 
+ 
+ 
+Course Code: CST446 
+Course Name: DATA COMPRESSION TECHNIQUES 
+Max. Marks: 100 
+ 
+Duration: 3 Hours 
+ 
+PART A  
+ 
+ 
+Answer all questions, each carries 3 marks. 
+Marks 
+1 
+ 
+Define Entropy and state its significance in data compression. 
+(3) 
+2 
+ 
+Why Huffman encoding is known as optimal prefix code? 
+(3) 
+3 
+ 
+Using RLE encoding techniques generate the compressed sequence for the input 
+aaaaaaaaabbbbbbecececececececececddddddddddddddddecb and justify whether 
+the compression is efficient? 
+(3) 
+4 
+ 
+Define the unit decibles (db) and what aspect of the audio signal does it 
+measure? 
+(3) 
+5 
+ 
+State the significance of sampling and quantization in video processing. 
+(3) 
+6 
+ 
+List any six file formats that can be used to store image contents. 
+(3) 
+7 
+ 
+Draw the structure of source data format (packs) of MPEG-1 video standard.  
+(3) 
+8 
+ 
+How dictionary encoding differs from Huffman coding? 
+(3) 
+9 
+ 
+Describe as of why lossless and lossy compressions are used for compressing 
+text data and audio data respectively? 
+(3) 
+10  
+Distinguish between silence and companding strategies for lossy audio 
+compression. 
+(3) 
+PART B  
+Answer any one full question from each module, each carries 14 marks. 
+ 
+ 
+Module I 
+ 
+11 a) Describe in detail how the performance of a compression algorithm can be 
+measured? 
+(7) 
+ 
+b) Compare the physical and probability data models used in data compression. 
+(7) 
+ 
+ 
+OR 
+ 
+12 a) Consider a numerical sequence 9,11,11,11,14,13,15,17,16,17,20,21. Show any 
+(10) 
+C
+Pages: 3
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+Eighth Semester B.Tech Degree Regular Examination June 2023 (2019 Scheme)
+Reg No.:_______________
+Name:__________________________
+A
+
+=== PAGE 2 ===
+0400CST446052302 
+ 
+Page 2of 3 
+of the modelling and coding aspects that can be used for designing a 
+compression technique for the given sequence. 
+ 
+b) List any four application areas each for lossless and lossy compression 
+techniques. 
+(4) 
+ 
+ 
+Module II 
+ 
+13 a) Consider a sequence which contains characters with the following frequencies: 
+A – 1, B – 1, C – 1, D – 2, E – 3, F – 5, G – 5 and H – 12. Construct the 
+Huffman tree for the following characters and find the optimal code for each. 
+(10) 
+ 
+b) Distinguish between RLE and Arithmetic Coding Techniques. 
+(4) 
+ 
+ 
+OR 
+ 
+14 a) Consider a data sequence which contains characters with the following 
+probabilities: A – 0.4, B – 0.3, C – 0.2 and D – 0.1. It is given that the tags 
+generated for the sequence is 0.516928, if so decode the sequence using the 
+Arithmetic coding technique. 
+(10) 
+ 
+b) State the steps involved in constructing non-binary Huffman tree and how do the 
+generated code sequence differ from that of a binary Huffman coding? 
+(4) 
+ 
+ 
+Module III 
+ 
+15 a) Outline the procedures used in the JPEG encoding and decoding process. 
+(10) 
+ 
+b) Compare LZ77 and LZ78 dictionary coding techniques. 
+(4) 
+ 
+ 
+OR 
+ 
+16 a) Consider the sequence ratatatatbabratbatbabrat. Encode the given sequence using 
+LZW algorithm with the initial dictionary as given below. Give the encoded 
+sequence and final dictionary.  
+Index 
+Entry 
+1 
+a 
+2 
+b 
+3 
+r 
+4 
+t 
+(10) 
+ 
+b) State the significance of Discrete Cosine Transform used in JPEG compression. 
+(4) 
+ 
+ 
+Module IV 
+ 
+17 a) With a diagram explain the working of a colour CRT monitor. 
+(7) 
+ 
+b) Outline the different layers of MPEG-1 video stream. 
+(7) 
+ 
+ 
+OR 
+ 
+A
+
+=== PAGE 3 ===
+0400CST446052302 
+ 
+Page 3of 3 
+18 a) Describe  motion compensation in video compression. 
+(7) 
+ 
+b) State the features of MPEG-4 video compression standards. 
+(7) 
+ 
+ 
+Module V 
+ 
+19 a) Define the terms: (a) Hearing Threshold. (b) Frequency Masking. (c) Critical 
+Bands. (d) Temporal Masking. 
+(8) 
+ 
+b) List the important features of layer-III of the MPEG audio compression 
+standard. 
+(6) 
+ 
+ 
+OR 
+ 
+20 a) Compare the layer-I and layer-II of MPEG audio compression standard. 
+(8) 
+ 
+b) Elaborate the psychoacoustic model used in MPEG audio compression. 
+(6) 
+**** 
+ 
+A

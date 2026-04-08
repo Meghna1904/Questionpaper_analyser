@@ -1,0 +1,206 @@
+FILE: 2024 Aug CST446-D.pdf
+PAGES: 3, TOTAL CHARS (no whitespace): 3147, AVG/PAGE: 1049
+IS_DIGITAL: True
+
+=== PAGE 1 ===
+0400CST446082401 
+ 
+Page 1of 3 
+ 
+ 
+ 
+ 
+Course Code: CST446 
+Course Name: DATA COMPRESSION TECHNIQUES 
+Max. Marks: 100 
+ 
+Duration: 3 Hours 
+ 
+PART A  
+ 
+ 
+Answer all questions, each carries 3 marks. 
+Marks 
+1 
+ 
+Elaborate the relevance of data compression with a few examples 
+(3) 
+2 
+ 
+Mathematically define the terms- self information and entropy. What is the 
+significance of entropy in compression? 
+(3) 
+3 
+ 
+Explain the term Compression factor in RLE algorithm 
+(3) 
+4 
+ 
+List out the characteristics of Huffman code. 
+(3) 
+5 
+ 
+Show the working blocks of JPEG LS Algorithm. What are the 2 modes of 
+operation? 
+(3) 
+6 
+ 
+Elaborate the concept of dynamic dictionary based coding techniques. 
+(3) 
+7 
+ 
+With the support of figures explain the features of progressive and interlaved 
+scanning 
+(3) 
+8 
+ 
+Give the characteristics of YUV and YIQ colour models in video. 
+(3) 
+9 
+ 
+Mathematically discuss the measurement of sound pressure level (SPL) 
+(3) 
+10  
+Define the terms: (a) Hearing Threshold (b) Critical Bands 
+ 
+(3) 
+PART B  
+Answer any one full question from each module, each carries 14 marks. 
+ 
+ 
+Module I 
+ 
+11 a) Elaborate the models for lossless compression with relevant mathematical 
+equations. 
+(7) 
+ 
+b) Explain the various measures of evaluating the performance of compression 
+algorithms. 
+(7) 
+ 
+ 
+OR 
+ 
+12 a) With figures and mathematical equations explain the Gaussian model and uniform 
+distribution model for lossy compression. 
+(6) 
+C
+Pages: 3
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+Eighth Semester B.Tech Degree Supplementary Examination August 2024 (2019 Scheme)
+Reg No.:_______________
+Name:__________________________
+A
+
+=== PAGE 2 ===
+0400CST446082401 
+ 
+Page 2of 3 
+ 
+b) With an example, elaborate the method of modelling and coding applied for 
+compression of data. 
+Can assume data set as 9,11,11,11,14,13,15,17,16,17,20,21 for the example 
+(8) 
+ 
+ 
+Module II 
+ 
+13 a) With the help of a flowgraph and an example, explain the RLE Compression 
+Algorithm. 
+(7) 
+ 
+b) A source emits letters from an alphabet A={a1,a2,a3,a4,a5} with probabilities  
+P(a1)= 0.15 ,P(a2)=0.04, P(a3)=0.26,P(a4)=0.05 P(a5)=0.50 
+(a) Calculate the entropy of this source. 
+(b) Find a Huffman code for this source. 
+(c) Find the average length of the code  
+(7) 
+ 
+ 
+OR 
+ 
+14 a)  Given the probability model below 
+ 
+Find the real valued tag for the sequence    a1 a1 a3 a2 a3 a1 using Arithmetic 
+coding 
+(7) 
+ 
+b) A source emits letters from an alphabet A={a1,a2,a3,a4 } with probabilities  
+P(a1)= 0.1 ,P(a2)=0.3, P(a3)=0.25,(a4)=0.35  
+a. Find the huffman code using 2 methods. 
+b.. Find which of the two codes results in minimum variance. 
+(7) 
+ 
+ 
+Module III 
+ 
+15 a) Consider the sequence :    cabracadabrarrarrad . 
+Given window size=13, look ahead buffer size=6, search buffer size=7,                  
+Encode the sequence using LZ77 Algorithm. 
+(10) 
+ 
+b) Give the merits and demerits of LZ77 algorithm 
+(4) 
+ 
+ 
+OR 
+ 
+16 a) Detail with the help of figures, the steps involved in the JPEG encoding and 
+decoding process 
+(10) 
+ 
+b) Encode the string ABCDABCABCDA using LZ 78 Algorithm 
+ 
+(4) 
+ 
+ 
+ 
+ 
+A
+
+=== PAGE 3 ===
+0400CST446082401 
+ 
+Page 3of 3 
+Module IV 
+17 a) Describe the concept of motion compensation in video compression.   
+Elaborate the working blocks used in motion compensation with the help of a 
+figure. 
+(10) 
+ 
+b) Explain the type of frames used in video signal encoding  
+(4) 
+ 
+ 
+OR 
+ 
+18 a) Illustrate and explain the MPEG1 Video syntax 
+(8) 
+ 
+b) Give 6 important functionalities of MPEG 4 Video standard 
+(6) 
+ 
+ 
+Module V 
+ 
+19 a) Explain the concept of companding. Bring out the algorithmic approach to 
+approximately obtain the companded code words 
+(10) 
+ 
+b) Discuss the psychoacoustic model for audio signal processing. 
+(4) 
+ 
+ 
+OR 
+ 
+20 a) Discuss the unique features of Layer-III compared to other layers in MPEG Audio 
+Coding 
+(7) 
+ 
+b) With the help of figures explain the concept of Frequency Masking and Temporal 
+Masking in Audio Signal Processing 
+(7) 
+**** 
+ 
+ 
+A

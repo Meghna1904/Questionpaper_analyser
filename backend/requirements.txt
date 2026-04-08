@@ -1,0 +1,9 @@
+flask
+flask-cors
+pymupdf
+pdf2image
+pytesseract
+Pillow
+sentence-transformers
+scikit-learn
+numpy

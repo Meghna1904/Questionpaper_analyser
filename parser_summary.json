@@ -1,0 +1,629 @@
+{
+  "2023 June CST446-A.pdf": {
+    "mode": "digital",
+    "part_a_count": 10,
+    "part_b_count": 10,
+    "part_a": [
+      {
+        "q_num": 1,
+        "text": "Define Entropy and state its significance in data compression.",
+        "module": 1
+      },
+      {
+        "q_num": 2,
+        "text": "Why Huffman encoding is known as optimal prefix code?",
+        "module": 1
+      },
+      {
+        "q_num": 3,
+        "text": "Using RLE encoding techniques generate the compressed sequence for the input aaaaaaaaabbbbbbecececececececececddddddddddddddddecb and justify whether the compression is efficient?",
+        "module": 2
+      },
+      {
+        "q_num": 4,
+        "text": "Define the unit decibles (db) and what aspect of the audio signal does it measure?",
+        "module": 2
+      },
+      {
+        "q_num": 5,
+        "text": "State the significance of sampling and quantization in video processing.",
+        "module": 3
+      },
+      {
+        "q_num": 6,
+        "text": "List any six file formats that can be used to store image contents.",
+        "module": 3
+      },
+      {
+        "q_num": 7,
+        "text": "Draw the structure of source data format (packs) of MPEG-1 video standard.",
+        "module": 4
+      },
+      {
+        "q_num": 8,
+        "text": "How dictionary encoding differs from Huffman coding?",
+        "module": 4
+      },
+      {
+        "q_num": 9,
+        "text": "Describe as of why lossless and lossy compressions are used for compressing text data and audio data respectively?",
+        "module": 5
+      },
+      {
+        "q_num": 10,
+        "text": "Distinguish between silence and companding strategies for lossy audio compression.",
+        "module": 5
+      }
+    ],
+    "part_b": [
+      {
+        "q_num": 11,
+        "module": 1,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Describe in detail how the performance of a compression algorithm can be measured?"
+          },
+          {
+            "marker": "b",
+            "text": "Compare the physical and probability data models used in data compression."
+          }
+        ]
+      },
+      {
+        "q_num": 12,
+        "module": 1,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Consider a numerical sequence 9,11,11,11,14,13,15,17,16,17,20,21. Show any Reg No.:_______________ of the modelling and coding aspects that can be used for designing a compression technique for the given sequence."
+          },
+          {
+            "marker": "b",
+            "text": "List any four application areas each for lossless and lossy compression techniques."
+          }
+        ]
+      },
+      {
+        "q_num": 13,
+        "module": 2,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Consider a sequence which contains characters with the following frequencies: A – 1, B – 1, C – 1, D – 2, E – 3, F – 5, G – 5 and H – 12. Construct the Huffman tree for the following characters and find the optimal code for each."
+          },
+          {
+            "marker": "b",
+            "text": "Distinguish between RLE and Arithmetic Coding Techniques."
+          }
+        ]
+      },
+      {
+        "q_num": 14,
+        "module": 2,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Consider a data sequence which contains characters with the following probabilities: A – 0.4, B – 0.3, C – 0.2 and D – 0.1. It is given that the tags generated for the sequence is 0.516928, if so decode the sequence using the Arithmetic coding technique."
+          },
+          {
+            "marker": "b",
+            "text": "State the steps involved in constructing non-binary Huffman tree and how do the generated code sequence differ from that of a binary Huffman coding?"
+          }
+        ]
+      },
+      {
+        "q_num": 15,
+        "module": 3,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Outline the procedures used in the JPEG encoding and decoding process."
+          },
+          {
+            "marker": "b",
+            "text": "Compare LZ77 and LZ78 dictionary coding techniques."
+          }
+        ]
+      },
+      {
+        "q_num": 16,
+        "module": 3,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Consider the sequence ratatatatbabratbatbabrat. Encode the given sequence using LZW algorithm with the initial dictionary as given below. Give the encoded sequence and final dictionary. Index Entry"
+          },
+          {
+            "marker": "b",
+            "text": "State the significance of Discrete Cosine Transform used in JPEG compression."
+          }
+        ]
+      },
+      {
+        "q_num": 17,
+        "module": 4,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "With a diagram explain the working of a colour CRT monitor."
+          },
+          {
+            "marker": "b",
+            "text": "Outline the different layers of MPEG-1 video stream."
+          }
+        ]
+      },
+      {
+        "q_num": 18,
+        "module": 4,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Describe motion compensation in video compression."
+          },
+          {
+            "marker": "b",
+            "text": "State the features of MPEG-4 video compression standards."
+          }
+        ]
+      },
+      {
+        "q_num": 19,
+        "module": 5,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Define the terms: (a) Hearing Threshold. (b) Frequency Masking. (c) Critical Bands. (d) Temporal Masking."
+          },
+          {
+            "marker": "b",
+            "text": "List the important features of layer-III of the MPEG audio compression standard."
+          }
+        ]
+      },
+      {
+        "q_num": 20,
+        "module": 5,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Compare the layer-I and layer-II of MPEG audio compression standard."
+          },
+          {
+            "marker": "b",
+            "text": "Elaborate the psychoacoustic model used in MPEG audio compression."
+          }
+        ]
+      }
+    ]
+  },
+  "2024 Aug CST446-D.pdf": {
+    "mode": "digital",
+    "part_a_count": 10,
+    "part_b_count": 10,
+    "part_a": [
+      {
+        "q_num": 1,
+        "text": "Elaborate the relevance of data compression with a few examples",
+        "module": 1
+      },
+      {
+        "q_num": 2,
+        "text": "Mathematically define the terms- self information and entropy. What is the significance of entropy in compression?",
+        "module": 1
+      },
+      {
+        "q_num": 3,
+        "text": "Explain the term Compression factor in RLE algorithm",
+        "module": 2
+      },
+      {
+        "q_num": 4,
+        "text": "List out the characteristics of Huffman code.",
+        "module": 2
+      },
+      {
+        "q_num": 5,
+        "text": "Show the working blocks of JPEG LS Algorithm. What are the 2 modes of operation?",
+        "module": 3
+      },
+      {
+        "q_num": 6,
+        "text": "Elaborate the concept of dynamic dictionary based coding techniques.",
+        "module": 3
+      },
+      {
+        "q_num": 7,
+        "text": "With the support of figures explain the features of progressive and interlaved scanning",
+        "module": 4
+      },
+      {
+        "q_num": 8,
+        "text": "Give the characteristics of YUV and YIQ colour models in video.",
+        "module": 4
+      },
+      {
+        "q_num": 9,
+        "text": "Mathematically discuss the measurement of sound pressure level (SPL)",
+        "module": 5
+      },
+      {
+        "q_num": 10,
+        "text": "Define the terms: (a) Hearing Threshold (b) Critical Bands",
+        "module": 5
+      }
+    ],
+    "part_b": [
+      {
+        "q_num": 11,
+        "module": 1,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Elaborate the models for lossless compression with relevant mathematical equations."
+          },
+          {
+            "marker": "b",
+            "text": "Explain the various measures of evaluating the performance of compression algorithms."
+          }
+        ]
+      },
+      {
+        "q_num": 12,
+        "module": 1,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "With figures and mathematical equations explain the Gaussian model and uniform distribution model for lossy compression. Reg No.:_______________"
+          },
+          {
+            "marker": "b",
+            "text": "With an example, elaborate the method of modelling and coding applied for compression of data. Can assume data set as 9,11,11,11,14,13,15,17,16,17,20,21 for the example"
+          }
+        ]
+      },
+      {
+        "q_num": 13,
+        "module": 2,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "With the help of a flowgraph and an example, explain the RLE Compression Algorithm."
+          },
+          {
+            "marker": "b",
+            "text": "A source emits letters from an alphabet A={a1,a2,a3,a4,a5} with probabilities P(a1)= 0.15 ,P(a2)=0.04, P(a3)=0.26,P(a4)=0.05 P(a5)=0.50 (a) Calculate the entropy of this source. (b) Find a Huffman code for this source. (c) Find the average length of the code"
+          }
+        ]
+      },
+      {
+        "q_num": 14,
+        "module": 2,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Given the probability model below Find the real valued tag for the sequence a1 a1 a3 a2 a3 a1 using Arithmetic coding"
+          },
+          {
+            "marker": "b",
+            "text": "A source emits letters from an alphabet A={a1,a2,a3,a4 } with probabilities P(a1)= 0.1 ,P(a2)=0.3, P(a3)=0.25,(a4)=0.35 a. Find the huffman code using 2 methods. b.. Find which of the two codes results in minimum variance."
+          }
+        ]
+      },
+      {
+        "q_num": 15,
+        "module": 3,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Consider the sequence : cabracadabrarrarrad . Given window size=13, look ahead buffer size=6, search buffer size=7, Encode the sequence using LZ77 Algorithm."
+          },
+          {
+            "marker": "b",
+            "text": "Give the merits and demerits of LZ77 algorithm"
+          }
+        ]
+      },
+      {
+        "q_num": 16,
+        "module": 3,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Detail with the help of figures, the steps involved in the JPEG encoding and decoding process"
+          },
+          {
+            "marker": "b",
+            "text": "Encode the string ABCDABCABCDA using LZ 78 Algorithm"
+          }
+        ]
+      },
+      {
+        "q_num": 17,
+        "module": 4,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Describe the concept of motion compensation in video compression. Elaborate the working blocks used in motion compensation with the help of a figure."
+          },
+          {
+            "marker": "b",
+            "text": "Explain the type of frames used in video signal encoding"
+          }
+        ]
+      },
+      {
+        "q_num": 18,
+        "module": 4,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Illustrate and explain the MPEG1 Video syntax"
+          },
+          {
+            "marker": "b",
+            "text": "Give 6 important functionalities of MPEG 4 Video standard"
+          }
+        ]
+      },
+      {
+        "q_num": 19,
+        "module": 5,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Explain the concept of companding. Bring out the algorithmic approach to approximately obtain the companded code words"
+          },
+          {
+            "marker": "b",
+            "text": "Discuss the psychoacoustic model for audio signal processing."
+          }
+        ]
+      },
+      {
+        "q_num": 20,
+        "module": 5,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Discuss the unique features of Layer-III compared to other layers in MPEG Audio Coding"
+          },
+          {
+            "marker": "b",
+            "text": "With the help of figures explain the concept of Frequency Masking and Temporal Masking in Audio Signal Processing"
+          }
+        ]
+      }
+    ]
+  },
+  "2024 May CST446-C.pdf": {
+    "mode": "digital",
+    "part_a_count": 10,
+    "part_b_count": 10,
+    "part_a": [
+      {
+        "q_num": 1,
+        "text": "Discuss different types of compression technique.",
+        "module": 1
+      },
+      {
+        "q_num": 2,
+        "text": "Explain distortion in terms of lossy compression techniques",
+        "module": 1
+      },
+      {
+        "q_num": 3,
+        "text": "A source emits letters from an alphabet A = [a1, a2, a3, a4, a5] with probabilities P(a1) = 0.15, P(a2) = 0.04, P(a3) = 0.26, P(a4) = 0.05, and P(a5) = 0.50. Find a Huffman code for this source.",
+        "module": 2
+      },
+      {
+        "q_num": 4,
+        "text": "Explain prefix code with example.",
+        "module": 2
+      },
+      {
+        "q_num": 5,
+        "text": "Compare LZ77 and LZ78.",
+        "module": 3
+      },
+      {
+        "q_num": 6,
+        "text": "Discuss the different modes of operation of JPEG Compression.",
+        "module": 3
+      },
+      {
+        "q_num": 7,
+        "text": "Explain Motion vector with an example.",
+        "module": 4
+      },
+      {
+        "q_num": 8,
+        "text": "Discuss any three application of MPEG-4.",
+        "module": 4
+      },
+      {
+        "q_num": 9,
+        "text": "Illustrate the basic MPEG audio coding algorithms.",
+        "module": 5
+      },
+      {
+        "q_num": 10,
+        "text": "Explain Digital Audio.",
+        "module": 5
+      }
+    ],
+    "part_b": [
+      {
+        "q_num": 11,
+        "module": 1,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Explain probability models for lossy compression"
+          },
+          {
+            "marker": "b",
+            "text": "Discuss various Measures of Performance in data compression with examples."
+          }
+        ]
+      },
+      {
+        "q_num": 12,
+        "module": 1,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Identify the mathematical preliminaries for Lossless Compression"
+          },
+          {
+            "marker": "b",
+            "text": "Explain the concepts of Modelling and Coding in Data Compression"
+          }
+        ]
+      },
+      {
+        "q_num": 13,
+        "module": 2,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "With the help of an example illustrate Arithmetic encoding"
+          },
+          {
+            "marker": "b",
+            "text": "Explain the significance of using variable size code in data compression techniques."
+          }
+        ]
+      },
+      {
+        "q_num": 14,
+        "module": 2,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "With a help of a flowchart illustrate text de-compression using Run Length Encoding."
+          },
+          {
+            "marker": "b",
+            "text": "Compare Binary and Non-binary Huffman Coding"
+          }
+        ]
+      },
+      {
+        "q_num": 15,
+        "module": 3,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "A sequence is encoded using the LZ77 algorithm. Given that C(a) = 1, C(b) = 2, C(r) = 3, and C(t) = 4, decode the following sequence of triples: ⟨ 0,0,3⟩, ⟨ 0,0,1⟩, ⟨ 0,0,4 ⟩, ⟨2,8,2⟩, ⟨3,1,2 ⟩, ⟨0,0,3 ⟩, ⟨ 6,4,4⟩, ⟨9,5,4 ⟩ Assume that the size of the window is 20 and the size of the look-ahead buffer is 10."
+          },
+          {
+            "marker": "b",
+            "text": "Encode the decoded sequence in the above question and check if both are same."
+          }
+        ]
+      },
+      {
+        "q_num": 16,
+        "module": 3,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "The output of the LZW encoder is the following sequence:"
+          },
+          {
+            "marker": "b",
+            "text": "Explain the main steps used in JPEG image compression."
+          }
+        ]
+      },
+      {
+        "q_num": 17,
+        "module": 4,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Explain different layers of a video stream with proper diagram."
+          },
+          {
+            "marker": "b",
+            "text": "Explain the main tools specified by the MPEG-4 standard."
+          }
+        ]
+      },
+      {
+        "q_num": 18,
+        "module": 4,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Identify the Main Components of MPEG-1."
+          },
+          {
+            "marker": "b",
+            "text": "With the help of diagram discuss composite and components video."
+          }
+        ]
+      },
+      {
+        "q_num": 19,
+        "module": 5,
+        "is_or_variant": false,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Differentiate Spectral and Temporal Masking."
+          },
+          {
+            "marker": "b",
+            "text": "Discuss the aspects in which Layer III encoding can be considered better than Layer I and Layer II encoding."
+          }
+        ]
+      },
+      {
+        "q_num": 20,
+        "module": 5,
+        "is_or_variant": true,
+        "sub_questions": [
+          {
+            "marker": "a",
+            "text": "Discuss the format of compressed data in Layer I and II."
+          },
+          {
+            "marker": "b",
+            "text": "With diagram, explain the MPEG audio encoder and decoder."
+          }
+        ]
+      }
+    ]
+  }
+}

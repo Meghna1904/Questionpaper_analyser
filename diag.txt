@@ -1,0 +1,401 @@
+Found 3 PDFs: ['2023 June CST446-A.pdf', '2024 Aug CST446-D.pdf', '2024 May CST446-C.pdf']
+
+============================================================
+FILE: 2023 June CST446-A.pdf
+============================================================
+
+[STEP 1] PyMuPDF extraction...
+  PyMuPDF avg chars/page: 1043 (threshold: 150)
+Mode: DIGITAL (PyMuPDF)
+
+--- RAW TEXT (first 1500 chars) ---
+[PAGE 1]
+0400CST446052302 
+ 
+Page 1of 3 
+ 
+ 
+ 
+ 
+Course Code: CST446 
+Course Name: DATA COMPRESSION TECHNIQUES 
+Max. Marks: 100 
+ 
+Duration: 3 Hours 
+ 
+PART A  
+ 
+ 
+Answer all questions, each carries 3 marks. 
+Marks 
+1 
+ 
+Define Entropy and state its significance in data compression. 
+(3) 
+2 
+ 
+Why Huffman encoding is known as optimal prefix code? 
+(3) 
+3 
+ 
+Using RLE encoding techniques generate the compressed sequence for the input 
+aaaaaaaaabbbbbbecececececececececddddddddddddddddecb and justify whether 
+the compression is efficient? 
+(3) 
+4 
+ 
+Define the unit decibles (db) and what aspect of the audio signal does it 
+measure? 
+(3) 
+5 
+ 
+State the significance of sampling and quantization in video processing. 
+(3) 
+6 
+ 
+List any six file formats that can be used to store image contents. 
+(3) 
+7 
+ 
+Draw the structure of source data format (packs) of MPEG-1 video standard.  
+(3) 
+8 
+ 
+How dictionary encoding differs from Huffman coding? 
+(3) 
+9 
+ 
+Describe as of why lossless and lossy compressions are used for compressing 
+text data and audio data respectively? 
+(3) 
+10  
+Distinguish between silence and companding strategies for lossy audio 
+compression. 
+(3) 
+PART B  
+Answer any one full question from each module, each carries 14 marks. 
+ 
+ 
+Module I 
+ 
+11 a) Describe in detail how the performance of a compression algorithm can be 
+measured? 
+(7) 
+ 
+b) Compare the physical and probability data models used in data compression. 
+(7) 
+ 
+ 
+OR 
+ 
+12 a) Consider a numerical seque
+...
+[Total chars: 4019]
+
+[STEP 2] Fixing OCR errors...
+[STEP 3] Reconstructing lines...
+  -> 19 lines after merge
+
+--- ALL MERGED LINES ---
+  [000] [PAGE 1]
+  [001] 0400CST446052302
+  [002] Page 1of 3
+  [003] Course Code: CST446
+  [004] Course Name: DATA COMPRESSION TECHNIQUES
+  [005] Max. Marks: 100
+  [006] Duration: 3 Hours
+  [007] PART A Answer all questions, each carries 3 marks. Marks 1 Define Entropy and state its significance in data compression. (3) 2 Why Huffman encoding i
+  [008] PART B Answer any one full question from each module, each carries 14 marks. Module I 11 a) Describe in detail how the performance of a compression al
+  [009] b) Compare the physical and probability data models used in data compression. (7) OR 12 a) Consider a numerical sequence 9,11,11,11,14,13,15,17,16,17,
+  [010] b) List any four application areas each for lossless and lossy compression techniques. (4) Module II 13 a) Consider a sequence which contains characte
+  [011] b) Distinguish between RLE and Arithmetic Coding Techniques. (4) OR 14 a) Consider a data sequence which contains characters with the following probab
+  [012] b) State the steps involved in constructing non-binary Huffman tree and how do the generated code sequence differ from that of a binary Huffman coding
+  [013] b) Compare LZ77 and LZ78 dictionary coding techniques. (4) OR 16 a) Consider the sequence ratatatatbabratbatbabrat. Encode the given sequence using LZ
+  [014] b) State the significance of Discrete Cosine Transform used in JPEG compression. (4) Module IV 17 a) With a diagram explain the working of a colour CR
+  [015] b) Outline the different layers of MPEG-1 video stream. (7) OR A [PAGE 3] 0400CST446052302 Page 3of 3 18 a) Describe motion compensation in video comp
+  [016] b) State the features of MPEG-4 video compression standards. (7) Module V 19 a) Define the terms: (a) Hearing Threshold. (b) Frequency Masking. (c) Cr
+  [017] b) List the important features of layer-III of the MPEG audio compression standard. (6) OR 20 a) Compare the layer-I and layer-II of MPEG audio compre
+  [018] b) Elaborate the psychoacoustic model used in MPEG audio compression. (6) **** A
+
+[STEP 4] Extracting questions...
+
+PART A -- 0 questions extracted
+
+PART B -- 0 main questions extracted
+
+WARNING: No questions extracted! Regex patterns may need adjustment.
+
+
+
+============================================================
+FILE: 2024 Aug CST446-D.pdf
+============================================================
+
+[STEP 1] PyMuPDF extraction...
+  PyMuPDF avg chars/page: 1040 (threshold: 150)
+Mode: DIGITAL (PyMuPDF)
+
+--- RAW TEXT (first 1500 chars) ---
+[PAGE 1]
+0400CST446082401 
+ 
+Page 1of 3 
+ 
+ 
+ 
+ 
+Course Code: CST446 
+Course Name: DATA COMPRESSION TECHNIQUES 
+Max. Marks: 100 
+ 
+Duration: 3 Hours 
+ 
+PART A  
+ 
+ 
+Answer all questions, each carries 3 marks. 
+Marks 
+1 
+ 
+Elaborate the relevance of data compression with a few examples 
+(3) 
+2 
+ 
+Mathematically define the terms- self information and entropy. What is the 
+significance of entropy in compression? 
+(3) 
+3 
+ 
+Explain the term Compression factor in RLE algorithm 
+(3) 
+4 
+ 
+List out the characteristics of Huffman code. 
+(3) 
+5 
+ 
+Show the working blocks of JPEG LS Algorithm. What are the 2 modes of 
+operation? 
+(3) 
+6 
+ 
+Elaborate the concept of dynamic dictionary based coding techniques. 
+(3) 
+7 
+ 
+With the support of figures explain the features of progressive and interlaved 
+scanning 
+(3) 
+8 
+ 
+Give the characteristics of YUV and YIQ colour models in video. 
+(3) 
+9 
+ 
+Mathematically discuss the measurement of sound pressure level (SPL) 
+(3) 
+10  
+Define the terms: (a) Hearing Threshold (b) Critical Bands 
+ 
+(3) 
+PART B  
+Answer any one full question from each module, each carries 14 marks. 
+ 
+ 
+Module I 
+ 
+11 a) Elaborate the models for lossless compression with relevant mathematical 
+equations. 
+(7) 
+ 
+b) Explain the various measures of evaluating the performance of compression 
+algorithms. 
+(7) 
+ 
+ 
+OR 
+ 
+12 a) With figures and mathematical equations explain the Gaussian model and uniform 
+distribution model for lossy compression. 
+(6) 
+C
+Pages: 3
+APJ ABDUL KALA
+...
+[Total chars: 4027]
+
+[STEP 2] Fixing OCR errors...
+[STEP 3] Reconstructing lines...
+  -> 22 lines after merge
+
+--- ALL MERGED LINES ---
+  [000] [PAGE 1]
+  [001] 0400CST446082401
+  [002] Page 1of 3
+  [003] Course Code: CST446
+  [004] Course Name: DATA COMPRESSION TECHNIQUES
+  [005] Max. Marks: 100
+  [006] Duration: 3 Hours
+  [007] PART A Answer all questions, each carries 3 marks. Marks 1 Elaborate the relevance of data compression with a few examples (3) 2 Mathematically define
+  [008] PART B Answer any one full question from each module, each carries 14 marks. Module I 11 a) Elaborate the models for lossless compression with relevan
+  [009] b) Explain the various measures of evaluating the performance of compression algorithms. (7) OR 12 a) With figures and mathematical equations explain 
+  [010] b) With an example, elaborate the method of modelling and coding applied for compression of data. Can assume data set as 9,11,11,11,14,13,15,17,16,17,
+  [011] b) A source emits letters from an alphabet A={a1,a2,a3,a4,a5} with probabilities P(a1)= 0.15 ,P(a2)=0.04, P(a3)=0.26,P(a4)=0.05 P(a5)=0.50
+  [012] (a) Calculate the entropy of this source.
+  [013] (b) Find a Huffman code for this source.
+  [014] (c) Find the average length of the code (7) OR 14 a) Given the probability model below Find the real valued tag for the sequence a1 a1 a3 a2 a3 a1 usi
+  [015] b) A source emits letters from an alphabet A={a1,a2,a3,a4 } with probabilities P(a1)= 0.1 ,P(a2)=0.3, P(a3)=0.25,(a4)=0.35 a. Find the huffman code us
+  [016] b) Give the merits and demerits of LZ77 algorithm (4) OR 16 a) Detail with the help of figures, the steps involved in the JPEG encoding and decoding p
+  [017] b) Encode the string ABCDABCABCDA using LZ 78 Algorithm (4) A [PAGE 3] 0400CST446082401 Page 3of 3 Module IV 17 a) Describe the concept of motion comp
+  [018] b) Explain the type of frames used in video signal encoding (4) OR 18 a) Illustrate and explain the MPEG1 Video syntax (8)
+  [019] b) Give 6 important functionalities of MPEG 4 Video standard (6) Module V 19 a) Explain the concept of companding. Bring out the algorithmic approach 
+  [020] b) Discuss the psychoacoustic model for audio signal processing. (4) OR 20 a) Discuss the unique features of Layer-III compared to other layers in MPE
+  [021] b) With the help of figures explain the concept of Frequency Masking and Temporal Masking in Audio Signal Processing (7) **** A
+
+[STEP 4] Extracting questions...
+
+PART A -- 0 questions extracted
+
+PART B -- 0 main questions extracted
+
+WARNING: No questions extracted! Regex patterns may need adjustment.
+
+
+
+============================================================
+FILE: 2024 May CST446-C.pdf
+============================================================
+
+[STEP 1] PyMuPDF extraction...
+  PyMuPDF avg chars/page: 1236 (threshold: 150)
+Mode: DIGITAL (PyMuPDF)
+
+--- RAW TEXT (first 1500 chars) ---
+[PAGE 1]
+0400CST446052303 
+ 
+Page 1of 2 
+ 
+ 
+ 
+ 
+Course Code: CST446 
+Course Name: DATA COMPRESSION TECHNIQUES 
+Max. Marks: 100 
+ 
+Duration: 3 Hours 
+PART A  
+ 
+ 
+Answer all questions, each carries 3 marks. 
+Marks 
+1 
+ 
+Discuss different types of compression technique. 
+(3) 
+2 
+ 
+Explain distortion in terms of lossy compression techniques  
+(3) 
+3 
+ 
+A source emits letters from an alphabet A = [a1, a2, a3, a4, a5] with probabilities 
+P(a1) = 0.15, P(a2) = 0.04, P(a3) = 0.26, P(a4) = 0.05, and P(a5) = 0.50. Find a 
+Huffman code for this source. 
+(3) 
+4 
+ 
+Explain prefix code with example. 
+(3) 
+5 
+ 
+Compare LZ77 and LZ78. 
+(3) 
+6 
+ 
+Discuss the different modes of operation of JPEG Compression. 
+(3) 
+7 
+ 
+Explain Motion vector with an example. 
+(3) 
+8 
+ 
+Discuss any three application of MPEG-4. 
+(3) 
+9 
+ 
+Illustrate the basic  MPEG audio coding algorithms. 
+(3) 
+10  
+Explain Digital Audio. 
+(3) 
+PART B  
+Answer any one full question from each module, each carries 14 marks. 
+ 
+ 
+Module I 
+ 
+11 a) Explain probability models for lossy compression 
+(8) 
+ 
+b) Discuss various Measures of Performance in data compression with examples. 
+(6) 
+ 
+ 
+OR 
+ 
+12 a) Identify the mathematical preliminaries for Lossless Compression 
+(7) 
+ 
+b) Explain the concepts of Modelling and Coding in Data Compression 
+(7) 
+ 
+ 
+Module II 
+ 
+13 a) With the help of an example illustrate Arithmetic encoding 
+(10) 
+ 
+b) Explain the significance of using variable size code in data compression 
+techniques. 
+(4) 
+ 
+...
+[Total chars: 3265]
+
+[STEP 2] Fixing OCR errors...
+[STEP 3] Reconstructing lines...
+  -> 20 lines after merge
+
+--- ALL MERGED LINES ---
+  [000] [PAGE 1]
+  [001] 0400CST446052303
+  [002] Page 1of 2
+  [003] Course Code: CST446
+  [004] Course Name: DATA COMPRESSION TECHNIQUES
+  [005] Max. Marks: 100
+  [006] Duration: 3 Hours
+  [007] PART A Answer all questions, each carries 3 marks. Marks 1 Discuss different types of compression technique. (3) 2 Explain distortion in terms of loss
+  [008] PART B Answer any one full question from each module, each carries 14 marks. Module I 11 a) Explain probability models for lossy compression (8)
+  [009] b) Discuss various Measures of Performance in data compression with examples. (6) OR 12 a) Identify the mathematical preliminaries for Lossless Compre
+  [010] b) Explain the concepts of Modelling and Coding in Data Compression (7) Module II 13 a) With the help of an example illustrate Arithmetic encoding (10
+  [011] b) Explain the significance of using variable size code in data compression techniques. (4) OR C Pages: 2 APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY Eig
+  [012] b) Compare Binary and Non-binary Huffman Coding (6) Module III 15 a) A sequence is encoded using the LZ77 algorithm. Given that C(a) = 1, C(b) = 2, C(
+  [013] 10. (7)
+  [014] b) Encode the decoded sequence in the above question and check if both are same. (7) OR 16 a) The output of the LZW encoder is the following sequence:
+  [015] b) Explain the main steps used in JPEG image compression. (6) Module IV 17 a) Explain different layers of a video stream with proper diagram. (8)
+  [016] b) Explain the main tools specified by the MPEG-4 standard. (6) OR 18 a) Identify the Main Components of MPEG-1. (7)
+  [017] b) With the help of diagram discuss composite and components video. (7) Module V 19 a) Differentiate Spectral and Temporal Masking. (7)
+  [018] b) Discuss the aspects in which Layer III encoding can be considered better than Layer I and Layer II encoding. (7) OR 20 a) Discuss the format of com
+  [019] b) With diagram, explain the MPEG audio encoder and decoder. (7) A
+
+[STEP 4] Extracting questions...
+
+PART A -- 0 questions extracted
+
+PART B -- 0 main questions extracted
+
+WARNING: No questions extracted! Regex patterns may need adjustment.
+
+

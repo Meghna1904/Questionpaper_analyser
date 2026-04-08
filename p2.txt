@@ -1,0 +1,36 @@
+FILE: 2023 June CST446-A.pdf  MODE:digital_sparse  PARTA:0  PARTB:10
+  B-Q11(M1)     subs=1: 'Describe in detail how the performance of a compre'
+  B-Q12(M1)[OR] subs=1: 'Consider a numerical sequence 9,11,11,11,14,13,15,'
+  B-Q13(M2)     subs=1: 'Consider a sequence which contains characters with'
+  B-Q14(M2)[OR] subs=1: 'Consider a data sequence which contains characters'
+  B-Q15(M3)     subs=1: 'Outline the procedures used in the JPEG encoding a'
+  B-Q16(M3)[OR] subs=1: 'Consider the sequence ratatatatbabratbatbabrat. En'
+  B-Q17(M4)     subs=1: 'With a diagram explain the working of a colour CRT'
+  B-Q18(M4)[OR] subs=1: 'Describe motion compensation in video compression.'
+  B-Q19(M5)     subs=1: 'Define the terms: (a) Hearing Threshold. (b) Frequ'
+  B-Q20(M5)[OR] subs=1: 'Compare the layer-I and layer-II of MPEG audio com'
+
+FILE: 2024 Aug CST446-D.pdf  MODE:digital_sparse  PARTA:0  PARTB:10
+  B-Q11(M1)     subs=1: 'Elaborate the models for lossless compression with'
+  B-Q12(M1)[OR] subs=1: 'With figures and mathematical equations explain th'
+  B-Q13(M2)     subs=1: 'With the help of a flowgraph and an example, expla'
+  B-Q14(M2)[OR] subs=1: 'Given the probability model below Find the real va'
+  B-Q15(M3)     subs=1: 'Consider the sequence : cabracadabrarrarrad . Give'
+  B-Q16(M3)[OR] subs=1: 'Detail with the help of figures, the steps involve'
+  B-Q17(M4)     subs=1: 'Describe the concept of motion compensation in vid'
+  B-Q18(M4)[OR] subs=1: 'Illustrate and explain the MPEG1 Video syntax b) G'
+  B-Q19(M5)     subs=1: 'Explain the concept of companding. Bring out the a'
+  B-Q20(M5)[OR] subs=1: 'Discuss the unique features of Layer-III compared '
+
+FILE: 2024 May CST446-C.pdf  MODE:digital_sparse  PARTA:0  PARTB:10
+  B-Q11(M1)     subs=1: 'Explain probability models for lossy compression b'
+  B-Q12(M1)[OR] subs=1: 'Identify the mathematical preliminaries for Lossle'
+  B-Q13(M2)     subs=1: 'With the help of an example illustrate Arithmetic '
+  B-Q14(M2)     subs=1: 'With a help of a flowchart illustrate text de-comp'
+  B-Q15(M3)     subs=1: 'A sequence is encoded using the LZ77 algorithm. Gi'
+  B-Q16(M3)[OR] subs=1: 'The output of the LZW encoder is the following seq'
+  B-Q17(M4)     subs=1: 'Explain different layers of a video stream with pr'
+  B-Q18(M4)[OR] subs=1: 'Identify the Main Components of MPEG-1. b) With th'
+  B-Q19(M5)     subs=1: 'Differentiate Spectral and Temporal Masking. b) Di'
+  B-Q20(M5)[OR] subs=1: 'Discuss the format of compressed data in Layer I a'
+

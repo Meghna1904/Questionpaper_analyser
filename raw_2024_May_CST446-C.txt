@@ -1,0 +1,200 @@
+FILE: 2024 May CST446-C.pdf
+PAGES: 2, TOTAL CHARS (no whitespace): 2489, AVG/PAGE: 1244
+IS_DIGITAL: True
+
+=== PAGE 1 ===
+0400CST446052303 
+ 
+Page 1of 2 
+ 
+ 
+ 
+ 
+Course Code: CST446 
+Course Name: DATA COMPRESSION TECHNIQUES 
+Max. Marks: 100 
+ 
+Duration: 3 Hours 
+PART A  
+ 
+ 
+Answer all questions, each carries 3 marks. 
+Marks 
+1 
+ 
+Discuss different types of compression technique. 
+(3) 
+2 
+ 
+Explain distortion in terms of lossy compression techniques  
+(3) 
+3 
+ 
+A source emits letters from an alphabet A = [a1, a2, a3, a4, a5] with probabilities 
+P(a1) = 0.15, P(a2) = 0.04, P(a3) = 0.26, P(a4) = 0.05, and P(a5) = 0.50. Find a 
+Huffman code for this source. 
+(3) 
+4 
+ 
+Explain prefix code with example. 
+(3) 
+5 
+ 
+Compare LZ77 and LZ78. 
+(3) 
+6 
+ 
+Discuss the different modes of operation of JPEG Compression. 
+(3) 
+7 
+ 
+Explain Motion vector with an example. 
+(3) 
+8 
+ 
+Discuss any three application of MPEG-4. 
+(3) 
+9 
+ 
+Illustrate the basic  MPEG audio coding algorithms. 
+(3) 
+10  
+Explain Digital Audio. 
+(3) 
+PART B  
+Answer any one full question from each module, each carries 14 marks. 
+ 
+ 
+Module I 
+ 
+11 a) Explain probability models for lossy compression 
+(8) 
+ 
+b) Discuss various Measures of Performance in data compression with examples. 
+(6) 
+ 
+ 
+OR 
+ 
+12 a) Identify the mathematical preliminaries for Lossless Compression 
+(7) 
+ 
+b) Explain the concepts of Modelling and Coding in Data Compression 
+(7) 
+ 
+ 
+Module II 
+ 
+13 a) With the help of an example illustrate Arithmetic encoding 
+(10) 
+ 
+b) Explain the significance of using variable size code in data compression 
+techniques. 
+(4) 
+ 
+ 
+OR 
+ 
+C
+Pages: 2
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY
+Eighth Semester B.Tech Degree (R,S) Examination May 2024 (2019 Scheme)
+Reg No.:_______________
+Name:__________________________
+A
+
+=== PAGE 2 ===
+0400CST446052303 
+ 
+Page 2of 2 
+14 a) With a help of a flowchart illustrate text de-compression using Run Length 
+Encoding. 
+(8) 
+ 
+b) Compare Binary and Non-binary Huffman Coding 
+(6) 
+ 
+ 
+Module III 
+ 
+15 a) A sequence is encoded using the LZ77 algorithm. Given that C(a) = 1, C(b) = 2, 
+C(r) = 3, and C(t) = 4, decode the following sequence of triples: ⟨ 0,0,3⟩, 
+⟨ 0,0,1⟩, ⟨ 0,0,4 ⟩, ⟨2,8,2⟩, ⟨3,1,2 ⟩, ⟨0,0,3 ⟩, ⟨ 6,4,4⟩, ⟨9,5,4 ⟩ 
+Assume that the size of the window is 20 and the size of the look-ahead buffer is 
+10. 
+(7) 
+ 
+b) Encode the decoded sequence in the above question and check if both are same. 
+(7) 
+ 
+ 
+OR 
+ 
+16 a) The output of the LZW encoder is the following sequence:  
+3 
+1 
+4 
+6 
+8 
+4 
+2 
+1 
+2 
+5 
+10 6 
+11 13 6 
+Decode this sequence. Given the Initial Dictionary 
+Index 
+Entry 
+1 
+a 
+2 
+b 
+3 
+c 
+4 
+d 
+Initial Dictionary 
+(8) 
+ 
+b) Explain the main steps used in JPEG image compression. 
+(6) 
+ 
+ 
+Module IV 
+ 
+17 a) Explain different layers of a video stream with proper diagram. 
+(8) 
+ 
+b) Explain the main tools specified by the MPEG-4 standard. 
+(6) 
+ 
+ 
+OR 
+ 
+18 a) Identify the Main Components of MPEG-1. 
+(7) 
+ 
+b) With the help of diagram discuss composite and components video. 
+(7) 
+ 
+ 
+Module V 
+ 
+19 a) Differentiate Spectral and Temporal Masking. 
+(7) 
+ 
+b) Discuss the aspects in which Layer III encoding can be considered better than 
+Layer I and Layer II encoding. 
+(7) 
+ 
+ 
+OR 
+ 
+20 a) Discuss the format of compressed data in Layer I and II. 
+(7) 
+ 
+b) With diagram, explain the MPEG audio encoder and decoder. 
+(7) 
+ 
+A

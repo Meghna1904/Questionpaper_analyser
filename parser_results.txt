@@ -1,0 +1,48 @@
+﻿
+=======================================================
+FILE : 2023 June CST446-A.pdf
+MODE : digital_sparse  |  ERROR: Tesseract not found. Install from: https://github.com/UB-Mannheim/tesseract/wiki
+PART A: 0 questions
+PART B: 10 main questions
+  Q11 (M1)     : a)Describe in detail how the performance o
+  Q12 (M1) [OR]: a)Consider a numerical sequence 9,11,11,11
+  Q13 (M2)     : a)Consider a sequence which contains chara
+  Q14 (M2) [OR]: a)Consider a data sequence which contains 
+  Q15 (M3)     : a)Outline the procedures used in the JPEG 
+  Q16 (M3) [OR]: a)Consider the sequence ratatatatbabratbat
+  Q17 (M4)     : a)With a diagram explain the working of a 
+  Q18 (M4) [OR]: a)Describe motion compensation in video co
+  Q19 (M5)     : a)Define the terms: (a) Hearing Threshold.
+  Q20 (M5) [OR]: a)Compare the layer-I and layer-II of MPEG
+
+=======================================================
+FILE : 2024 Aug CST446-D.pdf
+MODE : digital_sparse  |  ERROR: Tesseract not found. Install from: https://github.com/UB-Mannheim/tesseract/wiki
+PART A: 0 questions
+PART B: 10 main questions
+  Q11 (M1)     : a)Elaborate the models for lossless compre
+  Q12 (M1) [OR]: a)With figures and mathematical equations 
+  Q13 (M2)     : a)With the help of a flowgraph and an exam
+  Q14 (M2) [OR]: a)Given the probability model below Find t
+  Q15 (M3)     : a)Consider the sequence : cabracadabrarrar
+  Q16 (M3) [OR]: a)Detail with the help of figures, the ste
+  Q17 (M4)     : a)Describe the concept of motion compensat
+  Q18 (M4) [OR]: a)Illustrate and explain the MPEG1 Video s
+  Q19 (M5)     : a)Explain the concept of companding. Bring
+  Q20 (M5) [OR]: a)Discuss the unique features of Layer-III
+
+=======================================================
+FILE : 2024 May CST446-C.pdf
+MODE : digital_sparse  |  ERROR: Tesseract not found. Install from: https://github.com/UB-Mannheim/tesseract/wiki
+PART A: 0 questions
+PART B: 10 main questions
+  Q11 (M1)     : a)Explain probability models for lossy com
+  Q12 (M1) [OR]: a)Identify the mathematical preliminaries 
+  Q13 (M2)     : a)With the help of an example illustrate A
+  Q14 (M2)     : a)With a help of a flowchart illustrate te
+  Q15 (M3)     : a)A sequence is encoded using the LZ77 alg
+  Q16 (M3) [OR]: a)The output of the LZW encoder is the fol
+  Q17 (M4)     : a)Explain different layers of a video stre
+  Q18 (M4) [OR]: a)Identify the Main Components of MPEG-1. 
+  Q19 (M5)     : a)Differentiate Spectral and Temporal Mask
+  Q20 (M5) [OR]: a)Discuss the format of compressed data in
