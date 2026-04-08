@@ -219,7 +219,9 @@ def export_pdf():
         return jsonify({"error": "xhtml2pdf not installed on server"}), 500
         
     try:
-        data = request.json
+        data = request.get_json(silent=True)
+        if not data:
+            return jsonify({"error": "No analysis data provided to export."}), 400
         # Render the HTML from the jinja template
         html_string = render_template('report.html', data=data)
         

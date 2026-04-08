@@ -7,3 +7,4 @@ Pillow
 sentence-transformers
 scikit-learn
 numpy
+xhtml2pdf

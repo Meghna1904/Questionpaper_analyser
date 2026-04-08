@@ -87,7 +87,15 @@ function App() {
       });
       
       if (!response.ok) {
-        throw new Error('Failed to generate PDF on server');
+        let message = 'Failed to generate PDF on server'
+        try {
+          const data = await response.json()
+          if (data?.error) message = data.error
+        } catch {
+          const text = await response.text()
+          if (text) message = text
+        }
+        throw new Error(message)
       }
       
       const blob = await response.blob();
