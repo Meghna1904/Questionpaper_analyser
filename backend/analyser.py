@@ -99,6 +99,16 @@ KEYWORD_WEIGHT = 0.3
 TOP_K_TOPICS   = 3    # max topics per question
 MIN_CONFIDENCE = 0.25  # minimum score to assign a topic
 
+# Allow disabling SBERT in low-memory environments (e.g., Render free tier).
+_USE_SBERT_ENV = os.getenv("USE_SBERT", "").strip().lower()
+_RUNNING_ON_RENDER = bool(os.getenv("RENDER")) or bool(os.getenv("RENDER_EXTERNAL_URL"))
+
+# Default to disabling SBERT on Render free tier to avoid OOM, unless explicitly enabled.
+if _USE_SBERT_ENV:
+    USE_SBERT = _USE_SBERT_ENV in {"1", "true", "yes", "y", "on"}
+else:
+    USE_SBERT = False if _RUNNING_ON_RENDER else True
+
 
 def score_questions_against_syllabus(
     questions: list[dict],   # list of {"text": ..., "q_num": ..., "module": ...}
@@ -121,7 +131,7 @@ def score_questions_against_syllabus(
     enriched = []
     
     # We load SBERT if requested
-    model = _get_model() if (use_sbert and HAS_SBERT) else None
+    model = _get_model() if (use_sbert and HAS_SBERT and USE_SBERT) else None
 
     for qi, q in enumerate(questions):
         # 1. Hard-map the module using parser
