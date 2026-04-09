@@ -1,28 +1,28 @@
 import { useState, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
-import axios from 'axios'
 import ResultsPage from './components/ResultsPage'
+import { analyseFiles } from './lib/analyseEngine'
 import './index.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api'
-
-const LOADING_STEPS = [
-  { id: 'upload',  label: 'Uploading files…' },
-  { id: 'parse',   label: 'Extracting questions from PDFs…' },
-  { id: 'syllabus',label: 'Parsing syllabus…' },
-  { id: 'nlp',     label: 'Running NLP topic matching (SBERT)…' },
-  { id: 'predict', label: 'Generating predictions…' },
+// ── Loading steps (frontend-only, no upload step) ─────────────────────────
+const BASE_STEPS = [
+  { id: 'syllabus',  label: 'Parsing syllabus…' },
+  { id: 'extract',   label: 'Extracting PDF text…' },
+  { id: 'questions', label: 'Extracting questions…' },
+  { id: 'topics',    label: 'Matching topics…' },
+  { id: 'predict',   label: 'Generating predictions…' },
 ]
 
 function App() {
-  const [files, setFiles]           = useState([])
+  const [files, setFiles]             = useState([])
   const [syllabusText, setSyllabusText] = useState('')
-  const [loading, setLoading]       = useState(false)
-  const [loadStep, setLoadStep]     = useState(0)
-  const [results, setResults]       = useState(null)
-  const [error, setError]           = useState('')
+  const [loading, setLoading]         = useState(false)
+  const [loadMsg, setLoadMsg]         = useState('')
+  const [loadStep, setLoadStep]       = useState(0)
+  const [results, setResults]         = useState(null)
+  const [error, setError]             = useState('')
 
-  // ── PDF Dropzone ───────────────────────────────────────────────────────
+  // ── PDF Dropzone ─────────────────────────────────────────────────────────
   const onDrop = useCallback((accepted) => {
     setFiles(prev => {
       const names = new Set(prev.map(f => f.name))
@@ -39,88 +39,58 @@ function App() {
 
   const removeFile = (name) => setFiles(f => f.filter(x => x.name !== name))
 
-  // ── Analyse ────────────────────────────────────────────────────────────
+  // ── Progress callback from engine ────────────────────────────────────────
+  const onProgress = (msg) => {
+    setLoadMsg(msg)
+    setLoadStep(prev => Math.min(prev + 1, BASE_STEPS.length - 1))
+  }
+
+  // ── Analyse ──────────────────────────────────────────────────────────────
   const handleAnalyse = async () => {
     if (!files.length) { setError('Please upload at least one PDF.'); return }
     if (!syllabusText.trim()) { setError('Please provide the syllabus text to match topics against.'); return }
 
     setLoading(true)
     setLoadStep(0)
+    setLoadMsg('Starting analysis…')
     setError('')
     setResults(null)
 
     try {
-      const form = new FormData()
-      files.forEach(f => form.append('files[]', f))
-      if (syllabusText.trim()) form.append('syllabus_text', syllabusText)
-
-      // Simulate step progression while waiting for API
-      const stepTimer = setInterval(() => {
-        setLoadStep(s => Math.min(s + 1, LOADING_STEPS.length - 1))
-      }, 1800)
-
-      const { data } = await axios.post(`${API_BASE}/analyse`, form, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-        timeout: 180000,
-      })
-
-      clearInterval(stepTimer)
-      setLoadStep(LOADING_STEPS.length)
+      const data = await analyseFiles(files, syllabusText, onProgress)
+      setLoadStep(BASE_STEPS.length)
       setResults(data)
     } catch (err) {
-      setError(
-        err.response?.data?.error ||
-        err.message ||
-        'Analysis failed. Make sure the backend is running.'
-      )
+      setError(err.message || 'Analysis failed. Please try again.')
     } finally {
       setLoading(false)
     }
   }
 
+  // ── Client-side Structured PDF export via pdfmake ─────────────────────────
   const handleExportPDF = async () => {
     try {
-      const response = await fetch(`${API_BASE}/export-pdf`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(results)
-      });
+      if (!results) { setError('Nothing to export yet.'); return }
       
-      if (!response.ok) {
-        let message = 'Failed to generate PDF on server'
-        try {
-          const data = await response.json()
-          if (data?.error) message = data.error
-        } catch {
-          const text = await response.text()
-          if (text) message = text
-        }
-        throw new Error(message)
-      }
-      
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "QP_Analysis_Report.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      window.URL.revokeObjectURL(url);
-    } catch(err) {
-      setError(err.message || "PDF Export failed");
+      const { generateStructuredPDF } = await import('./lib/pdfReportGenerator');
+      generateStructuredPDF(results);
+    } catch (err) {
+      console.error(err);
+      setError(err.message || 'PDF export failed.')
     }
   }
 
+  // ── Reset ────────────────────────────────────────────────────────────────
   const handleReset = () => {
     setResults(null)
     setFiles([])
     setSyllabusText('')
     setError('')
     setLoadStep(0)
+    setLoadMsg('')
   }
 
-  // ── Render ─────────────────────────────────────────────────────────────
+  // ── Render ───────────────────────────────────────────────────────────────
   return (
     <div className="app">
       {/* Navbar */}
@@ -132,7 +102,11 @@ function App() {
         </div>
         {results && (
           <div style={{ display: 'flex', gap: '0.75rem' }}>
-            <button className="navbar-btn" onClick={handleExportPDF} style={{ background: 'var(--text-primary)', color: 'var(--bg-primary)' }}>
+            <button
+              className="navbar-btn"
+              onClick={handleExportPDF}
+              style={{ background: 'var(--text-primary)', color: 'var(--bg-primary)' }}
+            >
               📥 Export PDF
             </button>
             <button className="navbar-btn" onClick={handleReset}>
@@ -144,7 +118,9 @@ function App() {
 
       {/* Content */}
       {results ? (
-        <ResultsPage results={results} onReset={handleReset} />
+        <div id="results-root">
+          <ResultsPage results={results} onReset={handleReset} />
+        </div>
       ) : loading ? (
         <div className="upload-page">
           <div className="loading-overlay">
@@ -153,8 +129,12 @@ function App() {
               <p style={{ fontWeight: 600, marginBottom: '1rem' }}>
                 Analysing your papers…
               </p>
+              {/* Dynamic live message */}
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '1.25rem', minHeight: '1.2em' }}>
+                {loadMsg}
+              </p>
               <div className="loading-steps">
-                {LOADING_STEPS.map((step, i) => (
+                {BASE_STEPS.map((step, i) => (
                   <div
                     key={step.id}
                     className={`loading-step ${i < loadStep ? 'done' : i === loadStep ? 'active' : ''}`}
@@ -175,6 +155,10 @@ function App() {
             <p>
               Upload multiple exam PDFs and your syllabus — get instant topic
               frequency analysis, module rankings, and predicted questions.
+              <br />
+              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                ✨ 100% in-browser — no server, no upload, no wait
+              </span>
             </p>
           </div>
 
@@ -190,7 +174,7 @@ function App() {
               <input {...getInputProps()} />
               <span className="dropzone-icon">📄</span>
               <h3>{isDragActive ? 'Drop PDFs here' : 'Drag & drop question paper PDFs'}</h3>
-              <p>or click to browse files</p>
+              <p>or click to browse files &nbsp;·&nbsp; digital PDFs only</p>
 
               {files.length > 0 && (
                 <div className="file-list" onClick={e => e.stopPropagation()}>
@@ -215,19 +199,19 @@ function App() {
           {/* Syllabus Card */}
           <div className="syllabus-card">
             <h3>📚 Syllabus</h3>
-
             <textarea
               className="syllabus-textarea"
-              placeholder={`Module 1 (Topic Title)\nTopic A, Topic B, Topic C...\n\nModule 2 (Topic Title)\nTopic D, Topic E...\n\n[Use commas or newlines to separate topics]`}
+              placeholder={`Module 1 (Introduction to Automata)\nFinite Automata, DFA, NFA, Regular Expressions\n\nModule 2 (Context-Free Languages)\nCFG, Pushdown Automata, CYK Algorithm\n\n[Use commas or newlines to separate topics]`}
               value={syllabusText}
               onChange={e => setSyllabusText(e.target.value)}
-              rows={6}
+              rows={7}
             />
           </div>
 
           {/* Analyse button */}
           <button
             className="analyse-btn"
+            id="analyse-btn"
             onClick={handleAnalyse}
             disabled={!files.length || loading}
           >

@@ -15,13 +15,28 @@ from typing import Optional
 
 import numpy as np
 
-# ── Optional SBERT ─────────────────────────────────────────────────────────
-try:
-    from sentence_transformers import SentenceTransformer
-    _SBERT_MODEL = None  # lazy-loaded
-    HAS_SBERT = True
-except ImportError:
+# Detect environment and decide SBERT usage before importing heavy deps.
+_USE_SBERT_ENV = os.getenv("USE_SBERT", "").strip().lower()
+_RUNNING_ON_RENDER = bool(os.getenv("RENDER")) or bool(os.getenv("RENDER_EXTERNAL_URL"))
+
+# Default to disabling SBERT on Render free tier to avoid OOM, unless explicitly enabled.
+if _USE_SBERT_ENV:
+    USE_SBERT = _USE_SBERT_ENV in {"1", "true", "yes", "y", "on"}
+else:
+    USE_SBERT = False if _RUNNING_ON_RENDER else True
+
+# Optional SBERT import (can be heavy due to torch)
+if USE_SBERT:
+    try:
+        from sentence_transformers import SentenceTransformer
+        _SBERT_MODEL = None  # lazy-loaded
+        HAS_SBERT = True
+    except ImportError:
+        HAS_SBERT = False
+        _SBERT_MODEL = None
+else:
     HAS_SBERT = False
+    _SBERT_MODEL = None
 
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -98,17 +113,7 @@ SBERT_WEIGHT   = 0.7
 KEYWORD_WEIGHT = 0.3
 TOP_K_TOPICS   = 3    # max topics per question
 MIN_CONFIDENCE = 0.25  # minimum score to assign a topic
-
-# Allow disabling SBERT in low-memory environments (e.g., Render free tier).
-_USE_SBERT_ENV = os.getenv("USE_SBERT", "").strip().lower()
-_RUNNING_ON_RENDER = bool(os.getenv("RENDER")) or bool(os.getenv("RENDER_EXTERNAL_URL"))
-
-# Default to disabling SBERT on Render free tier to avoid OOM, unless explicitly enabled.
-if _USE_SBERT_ENV:
-    USE_SBERT = _USE_SBERT_ENV in {"1", "true", "yes", "y", "on"}
-else:
-    USE_SBERT = False if _RUNNING_ON_RENDER else True
-
+\n
 
 def score_questions_against_syllabus(
     questions: list[dict],   # list of {"text": ..., "q_num": ..., "module": ...}
@@ -256,3 +261,5 @@ def get_ranked_topics(freq: dict, module: Optional[int] = None) -> list[dict]:
     ]
     items.sort(key=lambda x: (x["raw_count"], x["count"]), reverse=True)
     return items
+
+
